@@ -6,10 +6,26 @@
     <title>Mountain Bike Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
-<body>
+<body class="mtb">
     <div class="container">
-        <h1 class="welcome">Are you ready?</h1>
-        <button id="start">Start</button>
+        <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answers" class="btn-grid">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <section class="controls">
+            <div>
+            <h1>Let's Shred!</h1>
+
+            </div>
+            <button id="start-btn" class="start-btn btn">Start</button>
+        </section>
+        
+        
         <h2 id="countdown"></h2>
         <p id="main"></p>
       </div>

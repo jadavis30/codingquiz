@@ -1,22 +1,96 @@
-/*Coding quiz will have
- a countdown timer, 
- multiple questions, 
- multiple choice boxes 
-    (maybe short answer?)
-hover feature to change color of buttons 
-needs to state right or wrong at the bottom on next screen
-subtract time when answered wrong
-timer reaches 0 game ends
-moves to next question auto
-view high scores link
-start quiz page
-last page allows user to either play again or clear high scores
-needs to tally high score
-allow user to record high score with initials */
+const startButton = document.getElementById("start-btn")
+const questionContainerElement = document.getElementById("question-container")
+const questionElement = document.getElementById("question")
+const answerButtonsElement = document.getElementById("answer-buttons")
+let shuffledQuestions, currentQuestionIndex
+ 
+startButton.addEventListener("click", startGame)
 
-Reference for code:
-https://www.sitepoint.com/simple-javascript-quiz/
+function startGame() {
+    startButton.classList.add('hide')
+    shuffledQuestions = questons.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    questionContainerElement.classList.remove("hide")
+    nextQuestion()
+}
 
+function nextQuestion() {
+    resetState()
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+}
+
+function showQuestion(question) {
+    questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement("button")
+        button.innerText = answer.text
+        button.classList.add("btn")
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener("click", selectAnswer)
+        answerButtonsElement.appendChild(button)
+    })
+}
+
+function resetState() {
+    
+}
+
+function selectAnswer(event) {
+    const selectedButton = event.target
+    
+    
+}
+
+const questions = [
+    {
+        question: "What is a common component of a trail-ready bicycle?",
+        answers: {
+            A:"Drop bars",
+            B:"Aerodynamic tubing",
+            C: "Suspension fork",
+            D:"700x25c"
+        },
+        correctAnswer: "C"    
+    },
+    {
+        question: "Tubeless mountain bike tires require high air pressure to function.",
+        answers: {
+            A: "True",
+            B: "False"
+        },
+        correctAnswer: "B"
+    },
+    {
+        question: "Which of the following are frame materials used in bicycle manufacturing?",
+        answer: {
+            A: "Steel", 
+            B: "Aluminum", 
+            C: "Carbon fiber", 
+            D: "All of the above",
+        },
+        correctAnswer: "D"
+    },
+    {
+        question: "Smoother tread is preferable for technical, rooty riding.",
+        answer: {
+            A:"True",
+            B:"False"
+        },
+        correctAnswer: "False"
+    },
+    {
+        question: "Which of these mountain bike disciplines involves timed sections of downhill riding, with untimed climbs?",
+        answer: {
+            A:"XC", 
+            B:"Downhill", 
+            C:"Enduro",
+            D:"Dual Slalom",
+        },
+        correctAnswer: "C"
+
+/*
 //global variables for localStorage
 var nameInput = document.querySelector("#name-input");
 var scoreSave = document.querySelector('#high-score-saved');
@@ -29,7 +103,7 @@ var startBtn = document.getElementById("start");
 
 //message to display at end
 var message =
-    "Get Steezy!";
+    "Nice! Now go ride!";
 var words = message/split (" ");
 
 function countdown() {
@@ -47,7 +121,7 @@ function countdown() {
         }, 1000);
     }
 
-}
+
 
 function displayMessage() {
     var wordCount = 0;
@@ -65,44 +139,11 @@ function displayMessage() {
 
 startBtn.onclick = countdown;
 
-}
+
 
 //array of questions
 var questions = [
-    {
-        question: "Which one of these is not a Trek mountain bike?",
-        answer: [SuperCaliber = false, Roscoe = false, Madone = true, Marlin = false],
-    },
-    {
-        question: "2+2 = 5",
-        answer: false,
-
-    },
-    {
-        question: "Rockshox Zeb forks are single-crown forks featuring up to 190mm of travel.",
-        answer: true,
     
-    },
-    {
-        question: "Their going to the mall.",
-        answer: false,
-        
-    },
-    {
-        question: "They're going to the movies.",
-        answer: true,
-            
-    },
-    {
-        question: "Supercaliber features flex seat stays and an integrated frame shock.",
-        answer: true,
-                
-    },
-    {
-        question: "Aeolous Pro 37 wheels were named wheels of the year by Bicycling Magazine.",
-        answer: true,
-                    
-    }
     ]
 
 //keeping track of score
@@ -157,4 +198,4 @@ savedScores.addEventListener("click", function(event) {
         localStorage.setItem("high-score-saved", highScore);
         renderLastScores();
     }
-});
+}); */
