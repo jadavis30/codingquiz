@@ -1,14 +1,15 @@
 const startButton = document.getElementById("start-btn")
 const questionContainerElement = document.getElementById("question-container")
 const questionElement = document.getElementById("question")
-const answerButtonsElement = document.getElementById("answer-buttons")
+const answerButtonsElement = document.getElementById("answers")
 let shuffledQuestions, currentQuestionIndex
+var score = 0
  
 startButton.addEventListener("click", startGame)
 
 function startGame() {
     startButton.classList.add('hide')
-    shuffledQuestions = questons.sort(() => Math.random() - .5)
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove("hide")
     nextQuestion()
@@ -34,14 +35,24 @@ function showQuestion(question) {
 }
 
 function resetState() {
-    
+    while (answerButtonsElement.firstChild) {
+        //answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
 }
 
 function selectAnswer(event) {
     const selectedButton = event.target
-    
-    
+    if (selectedButton === correctAnswer) {
+        numCorrect ++;
+    }
+    if (shuffledQuestions.length > currentQuestionIndex + 1){
+        nextQuestion()
+    } else {
+        startButton.innerText = "Restart"
+        startButton.classList.remove("hide")
+    }   
 }
+
 
 const questions = [
     {
@@ -89,6 +100,29 @@ const questions = [
             D:"Dual Slalom",
         },
         correctAnswer: "C"
+    }
+];    
+
+function submitScore(){
+    
+}
+
+function countdown() {
+    var timeLeft = 60;
+    // countdown function
+    var timeInterval = setInterval(function(){
+        if(timeLeft <= 0) {
+            clearInterval(timeInterval);
+            timerEl.textContent = "Slam the brakes, bro!";
+            submitScore();
+        } else {
+            timerEl.textContent ="Time: " + timeLeft + "seconds left";
+        }
+        timeLeft -=1;
+        }, 1000);
+    }
+
+
 
 /*
 //global variables for localStorage
@@ -106,20 +140,7 @@ var message =
     "Nice! Now go ride!";
 var words = message/split (" ");
 
-function countdown() {
-    var timeLeft = 5;
-    // countdown function
-    var timeInterval = setInterval(function(){
-        if(timeLeft <= 0) {
-            clearInterval(timeInterval);
-            timerEl.textContent = "Done";
-            displayMessage();
-        } else {
-            timerEl.textContent =timeLeft + "seconds left";
-        }
-        timeLeft -=1;
-        }, 1000);
-    }
+
 
 
 

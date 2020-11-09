@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body class="mtb">
+    <header id="countdown"></header>
     <div class="container">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
@@ -17,18 +18,25 @@
                 <button class="btn">Answer 4</button>
             </div>
         </div>
-        <section class="controls">
-            <div>
-            <h1>Let's Shred!</h1>
 
-            </div>
+        <section class="controls">
+            <h1 class=hide>Let's Shred!</h1>          
             <button id="start-btn" class="start-btn btn">Start</button>
         </section>
         
-        
-        <h2 id="countdown"></h2>
-        <p id="main"></p>
-      </div>
+        <section id="score-submit" class="hide">
+        <h2>Nice Score!</h2>
+        <form method="POST">
+          <div class="input-group">
+            <label for="user">Enter initials:</label>
+            <input
+              type="text"
+              name="initials"
+              id="user-initials"
+              placeholder="XO"
+            />
+          </div>
+        </section>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
