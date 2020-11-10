@@ -4,6 +4,7 @@ var questionElement = document.getElementById("question");
 var answerButtonsElement = document.getElementById("answers");
 var shuffledQuestions, currentQuestionIndex;
 var count = 60;
+var highScore = localStorage.getItem("highscore");
 
 function startGame() {
     shuffledQuestions = questions.sort(() => Math.random() - .5)
