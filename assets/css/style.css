@@ -2,15 +2,24 @@
     box-sizing: border-box;
   }
   
+  
+  
   body {
     background:  rgb(140, 143, 119);
     margin: 0;
-    padding: 0;
+    padding: 30px 0 ;
     display: block;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 30px;
   }
 
   .mtb {
@@ -35,7 +44,8 @@
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
-
+    margin: auto;
+    text-align: center;
   }
 
   .btn-grid {
@@ -66,9 +76,8 @@
 }
 
 .controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  margin: auto;
 }
 
 .welcome {

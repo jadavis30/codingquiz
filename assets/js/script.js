@@ -3,26 +3,27 @@ var questionContainerElement = document.getElementById("question-container");
 var questionElement = document.getElementById("question");
 var answerButtonsElement = document.getElementById("answers");
 var shuffledQuestions, currentQuestionIndex;
-var score = 0;
 var count = 60;
-var interval = setInterval(function(){
-    document.getElementById("count").textContent="Time Left: " + count;
-    count--;
-    if (count === 0){
-        clearInterval(interval)
-        alert("You're out of time!")
-    }
-}, 1000); 
+
 function startGame() {
-    setInterval()
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove("hide")
     nextQuestion()
+    var interval = setInterval(function(){
+        document.getElementById("count").textContent="Time Left: " + count;
+        count--;
+        if (count === -1){
+            clearInterval(interval)
+            alert("You're out of time!")
+
+        }
+    }, 1000); 
+    
 }
 
 function nextQuestion() {
-    resetState()
+    //resetState()
     showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 
@@ -40,11 +41,6 @@ function showQuestion(question) {
     })
 }
 
-function resetState() {
-    while (answerButtonsElement.firstChild) {
-        //answerButtonsElement.removeChild(answerButtonsElement.firstChild)
-    }
-}
 
 function selectAnswer(event) {
     const selectedButton = event.target
@@ -110,6 +106,12 @@ const questions = [
         correctAnswer: "C"
     }
 ];    
+
+function answerCheck() {
+    var currentQuestionIndex = question.question + 1;
+    var element = document.getElementById("last-answer");
+    element.innerHTML = question.question
+};
 
 function  scoreSubmit() {
     scoreSubmit.classList.remove("hide")
