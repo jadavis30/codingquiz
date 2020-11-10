@@ -1,14 +1,20 @@
-const startButton = document.getElementById("start-btn")
-const questionContainerElement = document.getElementById("question-container")
-const questionElement = document.getElementById("question")
-const answerButtonsElement = document.getElementById("answers")
-let shuffledQuestions, currentQuestionIndex
-var score = 0
- 
-startButton.addEventListener("click", startGame)
-
+var startButton = document.getElementById("start-btn");
+var questionContainerElement = document.getElementById("question-container");
+var questionElement = document.getElementById("question");
+var answerButtonsElement = document.getElementById("answers");
+var shuffledQuestions, currentQuestionIndex;
+var score = 0;
+var count = 60;
+var interval = setInterval(function(){
+    document.getElementById("count").textContent="Time Left: " + count;
+    count--;
+    if (count === 0){
+        clearInterval(interval)
+        alert("You're out of time!")
+    }
+}, 1000); 
 function startGame() {
-    startButton.classList.add('hide')
+    setInterval()
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove("hide")
@@ -43,7 +49,10 @@ function resetState() {
 function selectAnswer(event) {
     const selectedButton = event.target
     if (selectedButton === correctAnswer) {
-        numCorrect ++;
+        count +2;
+    }
+    else if (selectedButton === !correctAnswer) {
+        count -5;
     }
     if (shuffledQuestions.length > currentQuestionIndex + 1){
         nextQuestion()
@@ -52,7 +61,6 @@ function selectAnswer(event) {
         startButton.classList.remove("hide")
     }   
 }
-
 
 const questions = [
     {
@@ -103,25 +111,16 @@ const questions = [
     }
 ];    
 
-function submitScore(){
-    
+function  scoreSubmit() {
+    scoreSubmit.classList.remove("hide")
+    count.textContent
 }
 
-function countdown() {
-    var timeLeft = 60;
-    // countdown function
-    var timeInterval = setInterval(function(){
-        if(timeLeft <= 0) {
-            clearInterval(timeInterval);
-            timerEl.textContent = "Slam the brakes, bro!";
-            submitScore();
-        } else {
-            timerEl.textContent ="Time: " + timeLeft + "seconds left";
-        }
-        timeLeft -=1;
-        }, 1000);
-    }
+startButton.addEventListener("click", startGame)
+submitButton.addEventListener("click", scoreSubmit)
 
+//function submitScore(){
+    
 
 
 /*

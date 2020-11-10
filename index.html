@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body class="mtb">
-    <header id="countdown"></header>
+    <header id="countdown" class="container">
+      <div id="view-scores">
+        View High Scores
+      </div>
+      <div id="count">
+        Time Left:
+      </div>
+    </header>
+
     <div class="container">
         <div id="question-container" class="hide">
             <div id="question">Question</div>
@@ -24,7 +32,7 @@
             <button id="start-btn" class="start-btn btn">Start</button>
         </section>
         
-        <section id="score-submit">
+        <section id="score-submit" class="hide">
         <h2>Nice Score!</h2>
         <form method="POST">
           <div class="input-group">

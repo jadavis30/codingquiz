@@ -6,33 +6,28 @@
     background:  rgb(140, 143, 119);
     margin: 0;
     padding: 0;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
 
-  .countdown {
-    background:  rgb(140, 143, 119);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    min-height: 100vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  
   .mtb {
     background-image: url(https://picsum.photos/id/1023/2955/2094);
     background-size: cover;
     background-position: center;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
   } 
 
+  .countdown {
+    background-color:  rgb(229, 233, 194);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 80%;
+  }
+  
   .container {
     width: 800px;
     max-width: 80%;
@@ -65,7 +60,7 @@
   }
 
 .start-btn {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   padding: 10px 20 px;
 }
