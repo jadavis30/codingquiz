@@ -98,6 +98,14 @@
 
 }
 
+.high-scores {
+    border-color: black;
+    background-color: blanchedalmond;
+    display: inline-block;
+    gap: 10px;
+    margin: 20px 0;
+
+}
 
  
 

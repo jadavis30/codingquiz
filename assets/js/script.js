@@ -5,7 +5,7 @@ var questionElement = document.getElementById("question");
 var answersContainer = document.getElementById("answers");
 var shuffledQuestions, currentQuestionIndex;
 var controls = document.getElementById("controls");
-var resetControls = document.getElementById("reset-controls");
+var restartControls = document.getElementById("restart-controls");
 var countElement = document.getElementById("count");
 var submitScoreContainer = document.getElementById("score-submit");
 var highScoreContainer = document.getElementById("high-scores");
@@ -73,7 +73,7 @@ function submitScore () {
     var scores = [];
 
     if (scoresString) {
-        scores = JSON.parse(scoreString);
+        scores = JSON.parse(scoresString);
     }
 
     scores.push(score);
@@ -101,7 +101,7 @@ function submitScore () {
 
     localStorage.setItem("highscore", JSON.stringify(scores));
 
-    submitScoreContainer.classList,add("hide");
+    submitScoreContainer.classList.add("hide");
     highScoreContainer.classList.remove("hide");
 }
 
@@ -205,7 +205,7 @@ const questions = [
     },
     {
         questionText: "Which of the following are frame materials used in bicycle manufacturing?",
-        answer: [
+        answers: [
             {
                 key: "A",
                 text: "Steel"
@@ -227,15 +227,21 @@ const questions = [
     },
     {
         questionText: "Smoother tread is preferable for technical, rooty riding.",
-        answer: {
-            A:"True",
-            B:"False"
-        },
-        correctAnswer: "False"
+        answers: [
+            {
+                key: "A",
+                text:"True"
+            },
+            {
+                key: "B",
+                text:"False"
+            }
+        ],
+        correctAnswer: "B"
     },
     {
         questionText: "Which of these mountain bike disciplines involves timed sections of downhill riding, with untimed climbs?",
-        answer: [
+        answers: [
             {
                 key: "A",
                 text:"XC"

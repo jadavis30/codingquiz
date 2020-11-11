@@ -8,9 +8,6 @@
 </head>
 <body class="mtb">
     <header id="countdown" class="container">
-      <div id="view-scores">
-        View High Scores
-      </div>
       <div id="count">
         Time Left:
       </div>
@@ -18,14 +15,14 @@
 
     <div class="container">
       <section id="score-submit" class="hide">
-        <h2>Nice Score!</h2>
+        <h2>Leave Your Mark</h2>
             <label for="user">Enter initials:</label>
             <input
               type="text"
               name="initials"
               id="user-initials"
               placeholder="XO"/>
-          <button onclick="scoreSubmit()" id="submit">Submit</button>
+          <button onclick="submitScore()" id="submit">Submit</button>
         </section>
 
       <div id="question-container" class="hide">
@@ -53,7 +50,6 @@
         </section>
         
       </div>
-      <footer id="last-answer"></footer>  
     <script src="assets/js/script.js"></script>
 </body>
 </html>
