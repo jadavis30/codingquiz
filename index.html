@@ -17,42 +17,43 @@
     </header>
 
     <div class="container">
-        <div id="question-container" class="hide">
-            <div id="question">Question</div>
-            <div id="answers" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </div>
-        </div>
-
-        <section class="controls">
-            <h1>Let's Shred!</h1>
-              <p>Take our crash course on mountain bikes! You've got sixty seconds--correct answers add time, incorrect answers take it away!</p>          
-            <button id="start-btn" class="start-btn btn">Start</button>
-        </section>
-        
-        <section id="score-submit" class="hide">
+      <section id="score-submit" class="hide">
         <h2>Nice Score!</h2>
-        <form method="POST">
-          <div class="input-group">
             <label for="user">Enter initials:</label>
             <input
               type="text"
               name="initials"
               id="user-initials"
-              placeholder="XO"
-            />
-          </div>
-          <div id="msg"></div>
-          <button id="submit">Submit</button>
-          </form>
+              placeholder="XO"/>
+          <button onclick="scoreSubmit()" id="submit">Submit</button>
         </section>
+
+      <div id="question-container" class="hide">
+            <div id="question">Question</div>
+            <div id="answers" class="btn-grid">
+            </div>
+        </div>
+        
+        <section id="high-scores" class="hide" id="score-list">
+          <ol id="high-score-list"></ol>
+        </section>
+
+        <section id="loser-container" class="hide">
+          <div class="container">You went OTB dude! Try again!</div>
+        </section>
+        
+        <section id="controls">
+            <h1>Let's Shred!</h1>
+              <p>Take our crash course on mountain bikes! You've got sixty seconds--correct answers add time, incorrect answers take it away!</p>          
+            <button onclick="startGame()" id="start-btn" class="start-btn btn">Start</button>
+        </section>
+
+        <section id="restart-controls" class="hide">
+          <button onclick="startGame()" id="restart-btn" class="start-btn btn">Restart</button>
+        </section>
+        
       </div>
-      <footer>
-        <p id="last-answer">x</p>
-      </footer>  
+      <footer id="last-answer"></footer>  
     <script src="assets/js/script.js"></script>
 </body>
 </html>

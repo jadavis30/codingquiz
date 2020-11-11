@@ -67,6 +67,7 @@
     border-color: black;
     color: white;
     background-color: cornflowerblue;
+    
   }
 
 .start-btn {
@@ -75,7 +76,7 @@
   padding: 10px 20 px;
 }
 
-.controls {
+.controls .restart-controls {
   display: block;
   margin: auto;
 }
@@ -96,6 +97,8 @@
   align-items: center;
 
 }
+
+
  
 
   
